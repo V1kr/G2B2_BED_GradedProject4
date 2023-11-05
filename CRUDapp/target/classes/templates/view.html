@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Ticket Management System</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/litera/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Ticket Tracker System</a>
+            <div class="collapse navbar-collapse" id="navbarColor02">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/tickets}">Tickets</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/create}">New Ticket</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class ="container">
+        <h1>Ticket Details</h1>
+        <div class="card border-primary mb-3" style="max-width: 20rem;">
+            <div class="card-header">Ticket</div>
+            <div class="card-body">
+                <table class="table table-hover">
+                    <tr class="table-light">
+                        <th scope="row">ID</th>
+                        <td th:text="${ticket.id}"></td>
+                    </tr>
+                    <tr class="table-light">
+                        <th scope="row">Name</th>
+                        <td th:text="${ticket.name}"></td>
+                    </tr>
+                    <tr class="table-light">
+                        <th scope="row">Description</th>
+                        <td th:text="${ticket.description}"></td>
+                    </tr>
+                    <tr class="table-light">
+                        <th scope="row">Date</th>
+                        <td th:text="${ticket.date}"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
